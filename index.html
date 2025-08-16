@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AnomaCV</title>
+    <link rel="icon" type="image/png" href="anomaLogo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="brand">
+        <img src="anomaLogo.png" alt="ANOMA Logo" class="brand-logo" />
+        <span>AnomaCV</span>
+      </div>
+      <div class="actions">
+        <button id="downloadBtn" class="btn primary">Download as PNG</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="controls" aria-label="Girdi Paneli">
+        <h2>Enter Information</h2>
+        <div class="form-grid">
+          <label class="field">
+            <span>Discord Username</span>
+            <input id="discordInput" type="text" placeholder="e.g. emirhankilic" />
+          </label>
+          <label class="field">
+            <span>X (Twitter) Username</span>
+            <input id="xInput" type="text" placeholder="@username" />
+          </label>
+        </div>
+
+        <div class="upload-grid">
+          <label class="upload">
+            <span>Profile Photo</span>
+            <input id="ssProfile" type="file" accept="image/*" />
+          </label>
+          <label class="upload">
+            <span>Message Count Screenshot</span>
+            <input id="ssMessages" type="file" accept="image/*" />
+          </label>
+          <label class="upload">
+            <span>Testnet Rank Screenshot</span>
+            <input id="ssRank" type="file" accept="image/*" />
+          </label>
+          <label class="upload">
+            <span>X Posts Screenshots (multiple selectable)</span>
+            <input id="ssX" type="file" accept="image/*" multiple />
+          </label>
+          <label class="upload">
+            <span>Discord Current Roles Screenshot</span>
+            <input id="ssRoles" type="file" accept="image/*" />
+          </label>
+        </div>
+
+        <label class="field mt">
+          <span>Higher Role Request Reason</span>
+          <textarea id="reasonInput" rows="6" placeholder="Explain briefly and clearly why you deserve a higher role..."></textarea>
+        </label>
+      </section>
+
+      <section class="preview" aria-label="Preview">
+        <div id="cvCard" class="cv-card" role="img" aria-label="Generated ANOMA Fan CV">
+          <div class="cv-header">
+            <div class="cv-identity">
+              <div class="avatar-circle">
+                <img id="imgProfile"/>
+              </div>
+              <div class="who">
+                <div class="ids">
+                  <span id="discordPreview" class="tag">discord</span>
+                  <span id="xPreview" class="tag">x</span>
+                </div>
+              </div>
+            </div>
+            <div class="cv-badge">Community Fan CV</div>
+          </div>
+
+          <div class="cv-body">
+            <div class="grid-2 tall">
+              <figure class="shot">
+                <figcaption>Message Count</figcaption>
+                <div class="image-container">
+                  <img id="imgMessages"/>
+                  <div class="placeholder">No image uploaded</div>
+                </div>
+              </figure>
+              <figure class="shot">
+                <figcaption>Testnet Rank</figcaption>
+                <div class="image-container">
+                  <img id="imgRank"/>
+                  <div class="placeholder">No image uploaded</div>
+                </div>
+              </figure>
+              <figure class="shot wide">
+                <figcaption>X Posts</figcaption>
+                <div id="xGallery" class="gallery-grid" aria-live="polite">
+                  <div class="placeholder">No images uploaded</div>
+                </div>
+              </figure>
+              <figure class="shot">
+                <figcaption>Discord Roles</figcaption>
+                <div class="image-container">
+                  <img id="imgRoles"/>
+                  <div class="placeholder">No image uploaded</div>
+                </div>
+              </figure>
+            </div>
+
+            <div class="reason">
+              <div class="reason-title">Why higher role?</div>
+              <div id="reasonPreview" class="reason-text">Your explanation will appear here.</div>
+            </div>
+          </div>
+
+
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+  </html>
+
+
